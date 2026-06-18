@@ -1,6 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import TabContent from './TabContent'
+import styled from 'styled-components'
+
+const Box = styled.div`
+    padding: 20px 0;
+    color: GPUBindGroupLayout;
+    `
+
+const YellowBtn = styled.button`
+   color : white;
+   font-size: 30px;
+   width: 100%;
+   padding : 100px;
+   border: 1px solid #ccc;
+   background-image:url("https://plus.unsplash.com/premium_photo-1663100769321-9eb8fe5a8e6b?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+   background-size: cover;
+   background-position: center
+`
 
 const Detail = (props) => {
     const { shoes } = props
@@ -33,6 +50,11 @@ const Detail = (props) => {
                     2초이내 구매시 할인
                 </div>
             }
+
+            <Box>
+                <YellowBtn>지금 구매하면 10% 할인</YellowBtn>
+            </Box>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="w-full">
                     <img src={import.meta.env.BASE_URL + selproduct.imgUrl} alt="상품 이미지" className="w-full h-auto" />
@@ -83,7 +105,7 @@ const Detail = (props) => {
                 </li>
             </ul>
 
-            <TabContent tab={tab} />
+            <TabContent tab={tab}/>
 
 
         </div>

@@ -1,7 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { Context1 } from '../App'
 
-const TabContent = ({ tab }) => {
+const TabContent = ({ tab}) => {
   const [fade, setFade] = useState('')
+  const { remain, shoes } = useContext(Context1)
+
+  console.log(remain)
+console.log(shoes)
+  
+  
 
   useEffect(()=>{
       const aniTimer = setTimeout(()=>{setFade('end')}, 50)
@@ -13,7 +20,8 @@ const TabContent = ({ tab }) => {
 
   return (
         <div className={"text-center start " + fade}>
-            {[ <div>내용0</div>, <div>내용1</div>, <div>내용2</div> ][tab]}
+            {[ <div>내용0<br/>{remain[0]} : {shoes[0].title}
+            </div>, <div>내용1</div>, <div>내용2</div> ][tab]}
         </div>        
     )
 }
