@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
   tailwindcss()
   ],
-  base: '/shoesshop-react'
+  base: '/shoessshop-react'
 })
